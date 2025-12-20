@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Productivity Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style1.css">  
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <h1>Student Productivity Dashboard</h1>
+    <button id="themeToggle">🌙</button>
+  </header>
+
+  <!-- Main Container -->
+  <main class="container">
+
+    <!-- To-Do Section -->
+    <section class="card">
+      <h2>📝 To-Do List</h2>
+      <form class="todo-form">
+        <input type="text" placeholder="Add a new task..." />
+        <button>Add</button>
+      </form>
+      <ul class="todo-list">
+        <!-- Tasks will come here -->
+      </ul>
+    </section>
+
+    <!-- Notes Section -->
+    <section class="card">
+      <h2>📒 Notes</h2>
+      <form class="notes-form">
+        <input type="text" placeholder="Note title" />
+        <textarea placeholder="Write your note..."></textarea>
+        <button class="save-btn">Save Note</button>
+      </form>
+      <div class="notes-container">
+        <!-- Notes will appear here -->
+      </div>
+    </section>
+
+    <!-- Study Timer -->
+    <section class="card timer-card">
+      <h2>⏱️ Study Timer</h2>
+      <div class="timer-display"></div>
+      <div class="timer-buttons">
+        <button class="start">Start</button>
+        <button class="pause">Pause</button>
+        <button class="reset">Reset</button>
+      </div>
+    </section>
+
+    <!-- Daily Goals -->
+    <section class=" card goal-card">
+      <h2>🎯 Daily Goals</h2>
+      <input type="text" placeholder="Enter your daily goal..." />
+      <button>Add Goal</button>
+      <ul class="goal-list">
+        <!-- Goals will appear here -->
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>Built with ❤️ by Shubham</p>
+  </footer>
+
+
+  <script src="js/todo1.js"></script>
+  <script src="js/notes1.js"></script>
+  <script src="js/timer1.js"></script>
+  <script src="js/goal1.js"></script> 
+
+  
+
+</body>
+</html>
