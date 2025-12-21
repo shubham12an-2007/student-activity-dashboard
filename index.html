@@ -20,6 +20,20 @@
     <!-- To-Do Section -->
     <section class="card">
       <h2>📝 To-Do List</h2>
+
+      <!-- Progress Tracker -->
+<div class="progress-wrapper">
+  <div class="progress-text">
+    <span>Progress</span>
+    <span class="progress-percent">0%</span>
+  </div>
+
+  <div class="progress-bar">
+    <div class="progress-fill"></div>
+  </div>
+</div>
+
+
       <form class="todo-form">
         <input type="text" placeholder="Add a new task..." />
         <button>Add</button>
@@ -62,6 +76,35 @@
         <!-- Goals will appear here -->
       </ul>
     </section>
+
+
+    <!-- Productivity Analytics -->
+<section class="card analytics-card">
+  <h2>📊 Productivity Stats</h2>
+
+  <div class="stats-container">
+    <div class="stat-box">
+      <span class="stat-number" id="totalTasks">0</span>
+      <span class="stat-label">Total Tasks</span>
+    </div>
+
+    <div class="stat-box">
+      <span class="stat-number" id="completedTasks">0</span>
+      <span class="stat-label">Completed Tasks</span>
+    </div>
+
+    <div class="stat-box">
+      <span class="stat-number" id="totalGoals">0</span>
+      <span class="stat-label">Goals Added</span>
+    </div>
+
+    <div class="stat-box">
+      <span class="stat-number" id="completedGoals">0</span>
+      <span class="stat-label">Goals Completed</span>
+    </div>
+  </div>
+</section>
+
 
   </main>
 
