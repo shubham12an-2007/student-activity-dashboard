@@ -1,4 +1,4 @@
- //  I am starting off with making of daily goals //
+//  I am starting off with making of daily goals //
 let card = document.querySelector(".goal-card");
 let goalInput = card.querySelector("input");
 let goalBtn = card.querySelector("button");
@@ -9,59 +9,47 @@ let totalGoals = document.getElementById("totalGoals");
 let completedGoals = document.getElementById("completedGoals");
 
 // making of a function //
-function updateGoalAnalytics(){
-    
-    const totalNumber = document.querySelectorAll(".goal-list li");
-    const completedNumber = document.querySelectorAll(".goal-list li.completed");
+function updateGoalAnalytics() {
+  const totalNumber = document.querySelectorAll(".goal-list li");
+  const completedNumber = document.querySelectorAll(".goal-list li.completed");
 
-    totalGoals.textContent = totalNumber.length ;
-    completedGoals.textContent = completedNumber.length; 
-
+  totalGoals.textContent = totalNumber.length;
+  completedGoals.textContent = completedNumber.length;
 }
 
+// below this is the main code for the js and functions  //
 
+goalBtn.addEventListener("click", function (event) {
+  event.preventDefault();
 
+  if (goalInput.value.trim() === "") {
+    alert("please enter a goal ");
+  } else {
+    let li = document.createElement("li");
 
+    // create span for task text
+    let taskText = document.createElement("span");
+    taskText.textContent = goalInput.value;
+    li.appendChild(taskText);
 
-goalBtn.addEventListener("click" , function(event) {
-    event.preventDefault();
+    goalList.appendChild(li);
+    updateGoalAnalytics();
 
-    if(goalInput.value.trim() === ""){
-        alert("please enter a goal ");
-    }
-    else {
-        let li = document.createElement("li"    );
+    goalInput.value = "";
 
-           // create span for task text
-        let taskText = document.createElement("span");
-        taskText.textContent = goalInput.value;
-        li.appendChild(taskText);
+    taskText.addEventListener("click", function () {
+      li.classList.toggle("completed"); // marks completed/uncompleted
+      updateGoalAnalytics(); // updates the analytics card
+    });
 
-        goalList.appendChild(li); 
-        updateGoalAnalytics() ;
+    let delBtn = document.createElement("button");
+    delBtn.textContent = "x";
+    delBtn.classList.add("goal-delete-btn");
+    li.appendChild(delBtn);
 
-        goalInput.value = "" ; 
-
-
-          taskText.addEventListener("click", function() {
-    li.classList.toggle("completed");   // marks completed/uncompleted
-    updateGoalAnalytics();               // updates the analytics card
+    delBtn.addEventListener("click", function () {
+      li.remove();
+      updateGoalAnalytics();
+    });
+  }
 });
-
-let delBtn = document.createElement("button");
-delBtn.textContent = "x";
-delBtn.classList.add("goal-delete-btn");
-li.appendChild(delBtn);
-
-delBtn.addEventListener("click" , function()  {
-    li.remove();
-    updateGoalAnalytics(); 
-})
-
-    }
-
-  
-
-
-}); 
-
